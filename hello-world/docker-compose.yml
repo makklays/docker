@@ -1,0 +1,8 @@
+# Author: Alexander Kuziv 
+# E-mail: hola.kuziv@gmail.com 
+
+version: '2'
+services:
+  hello-world:
+    container_name: My-qa-container
+    image: hello-world:latest
