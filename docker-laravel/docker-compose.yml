@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  php-fpm:
+
+  nginx:
+
+  database:
+    build:
+      context: ./database 
