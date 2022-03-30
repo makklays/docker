@@ -11,6 +11,8 @@ services:
       - MYSQL_USER=myuser
       - MYSQL_PASSWORD=secret
       - MYSQL_ROOT_PASSWORD=docker
+    volumes:
+      - ./database/data.sql:docker-entrypoint-initdb.d/data.sql
   php-fpm:
     container_name: PHP-FPM-Container
     build:
