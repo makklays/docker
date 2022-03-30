@@ -2,6 +2,7 @@ version: '3'
 
 services:
   database:
+    container_name: DB-Container
     restart: always
     build:
       context: ./docker/database 
@@ -11,11 +12,13 @@ services:
       - MYSQL_PASSWORD=secret
       - MYSQL_ROOT_PASSWORD=docker
   php-fpm:
+    container_name: PHP-FPM-Container
     build:
       context: ./docker/php-fpm 
     volumes:
       - ./src:/var/www
   nginx:
+    container_name: NGINX-Container
     build:
       context: ./docker/nginx
     volumes:
@@ -26,5 +29,5 @@ services:
     depends_on:
       - php-fpm 
     ports:
-      - "80:80"
+      - "8081:8081"
       - "433:433"
